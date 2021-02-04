@@ -8,9 +8,15 @@ https://github.com/GPKnight/ColumbiaCyberSecurityProjects/blob/main/NetworkTopol
 
 These files have been tested and used to generate a live ELK deployment on Azure. They can be used to either recreate the entire deployment pictured above. Alternatively, individual playbooks may be used to install only certain pieces of the network structure, such as Filebeat and Metricbeat.
 
+Docker Setup
+
 -Configure Docker on Jump Box VM: https://github.com/GPKnight/ColumbiaCybersecurityProjects/blob/main/DockerVMConfig.yml
 
 -Ansible config file (change line #106 to the appropriate username): https://github.com/GPKnight/ColumbiaCybersecurityProjects/blob/main/ansible.cfg
+
+-Ansible hosts file (change the IPs / Group names i.e. Webservers / ELK, etc): https://github.com/GPKnight/ColumbiaCybersecurityProjects/blob/main/hosts
+
+---------------------------------------------------------------------------------------------------------------------------------------------------------
 
 -Installation of ELK stack on VM: https://github.com/GPKnight/ColumbiaCybersecurityProjects/blob/main/install-elk.yml
 
