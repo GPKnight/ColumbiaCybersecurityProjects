@@ -6,9 +6,13 @@ The files in this repository were used to configure the network depicted below.
 
 https://github.com/GPKnight/ColumbiaCyberSecurityProjects/blob/main/NetworkTopology.png
 
-These files have been tested and used to generate a live ELK deployment on Azure. They can be used to either recreate the entire deployment pictured above. Alternatively, select portions of the _____ file may be used to install only certain pieces of it, such as Filebeat.
+These files have been tested and used to generate a live ELK deployment on Azure. They can be used to either recreate the entire deployment pictured above. Alternatively, individual playbooks may be used to install only certain pieces of the network structure, such as Filebeat and Metricbeat.
 
-  - _TODO: Enter the playbook file._
+-Configure Docker on Jump Box VM: https://github.com/GPKnight/ColumbiaCybersecurityProjects/blob/main/DockerVMConfig.yml
+-Installation of ELK stack on VM: https://github.com/GPKnight/ColumbiaCybersecurityProjects/blob/main/install-elk.yml
+-Installation of Filebeat service: https://github.com/GPKnight/ColumbiaCybersecurityProjects/blob/main/filebeat-playbook.%2Cyml
+-Installation of Metricbeat service: https://github.com/GPKnight/ColumbiaCybersecurityProjects/blob/main/metricbeat-playbook.yml
+  
 
 This document contains the following details:
 - Description of the Topologu
