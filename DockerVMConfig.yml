@@ -1,7 +1,6 @@
 ---
 - name: Config Web VM with Docker
-  hosts: 10.0.0.7
-         10.0.0.8
+  hosts: webservers
   become: true
   tasks:
   - name: docker.io
