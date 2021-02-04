@@ -32,7 +32,7 @@ Installation of Filebeat log service and Metricbeat metric service
 
 -Installation of Metricbeat service: https://github.com/GPKnight/ColumbiaCybersecurityProjects/blob/main/metricbeat-playbook.yml
 
--Metricbeat config file (change line 61: kibana host IP/port, line 95 host IP/port): 
+-Metricbeat config file (change line 61: kibana host IP/port, line 95 host IP/port): https://github.com/GPKnight/ColumbiaCybersecurityProjects/blob/main/metricbeat-config.yml
   
   
   
