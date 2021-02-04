@@ -51,8 +51,10 @@ This document contains the following details:
 
 The main purpose of this network is to expose a load-balanced and monitored instance of DVWA, the D*mn Vulnerable Web Application.
 
-Load balancing ensures that the application will be highly _____, in addition to restricting _____ to the network.
-- _TODO: What aspect of security do load balancers protect? What is the advantage of a jump box?_
+Load balancing ensures that the application will be highly redundant ensuring availability, in addition to restricting overloading within the network.
+- The aspect of security which a load balancer impacts in the CIA Triad is availability. It allows distribution of incoming web traffic between hot servers, allowing for alleviated stress on the server itself.  And, in the case of server failure, maintains the availability of information to remain unimpeded.
+
+- The purpose of a Jump Box is to provide a secure and isolated server to allow sys admins to conduct administrative tasks over the network.
 
 Integrating an ELK server allows users to easily monitor the vulnerable VMs for changes to the _____ and system _____.
 - _TODO: What does Filebeat watch for?_
