@@ -28,6 +28,8 @@ Installation of Filebeat log service and Metricbeat metric service
 
 -Installation of Filebeat service: https://github.com/GPKnight/ColumbiaCybersecurityProjects/blob/main/filebeat-playbook.%2Cyml
 
+-Filebeat config file (make changes to line 1105: elasticsearch port, line 1805: kibana host port): https://github.com/GPKnight/ColumbiaCybersecurityProjects/blob/main/filebeat-config.yml 
+
 -Installation of Metricbeat service: https://github.com/GPKnight/ColumbiaCybersecurityProjects/blob/main/metricbeat-playbook.yml
   
   
