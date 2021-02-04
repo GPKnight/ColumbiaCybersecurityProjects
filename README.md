@@ -18,15 +18,24 @@ Docker Setup
 
 ---------------------------------------------------------------------------------------------------------------------------------------------------------
 
+Installation of ELK Stack on ELK VM
+
 -Installation of ELK stack on VM: https://github.com/GPKnight/ColumbiaCybersecurityProjects/blob/main/install-elk.yml
+
+---------------------------------------------------------------------------------------------------------------------------------------------------------
+
+Installation of Filebeat log service and Metricbeat metric service
 
 -Installation of Filebeat service: https://github.com/GPKnight/ColumbiaCybersecurityProjects/blob/main/filebeat-playbook.%2Cyml
 
 -Installation of Metricbeat service: https://github.com/GPKnight/ColumbiaCybersecurityProjects/blob/main/metricbeat-playbook.yml
   
+  
+  
+ ###Contents of README.md
 
 This document contains the following details:
-- Description of the Topologu
+- Description of the Topology
 - Access Policies
 - ELK Configuration
   - Beats in Use
