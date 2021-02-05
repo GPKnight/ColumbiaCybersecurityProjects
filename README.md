@@ -56,8 +56,10 @@ Load balancing ensures that the application will be highly redundant ensuring av
 
 - The purpose of a Jump Box is to provide a secure and isolated server to allow sys admins to conduct administrative tasks over the network.
 
-Integrating an ELK server allows users to easily monitor the vulnerable VMs for changes to the _____ and system _____.
-- _TODO: What does Filebeat watch for?_
+Integrating an ELK server allows users to easily monitor the vulnerable VMs for changes to the data and system logs.
+
+- Filebeat generates logs and forwards them through a specified port to a single server allowing admin to review/visualize and index multiple machines in single location without the need to SSH into multiple machines.
+
 - _TODO: What does Metricbeat record?_
 
 The configuration details of each machine may be found below.
