@@ -60,7 +60,7 @@ Integrating an ELK server allows users to easily monitor the vulnerable VMs for 
 
 - Filebeat generates logs and forwards them through a specified port to a single server allowing admin to review/visualize and index multiple machines in single location without the need to SSH into multiple machines.
 
-- _TODO: What does Metricbeat record?_
+- Metricbeat is a service deployed on VMs throughout your network to monitor metrics such as CPU usage, memory, file system, disk Input/Output (IO), and network IO. It also records statistics from services deployed on your network VMs including but not limited to Apache, MySQL, NGINX [Full List Here](https://www.elastic.co/guide/en/beats/metricbeat/current/metricbeat-modules.html)
 
 The configuration details of each machine may be found below.
 _Note: Use the [Markdown Table Generator](http://www.tablesgenerator.com/markdown_tables) to add/remove values from the table_.
