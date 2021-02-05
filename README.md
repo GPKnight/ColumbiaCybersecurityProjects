@@ -65,12 +65,12 @@ Integrating an ELK server allows users to easily monitor the vulnerable VMs for 
 The configuration details of each machine may be found below.
 _Note: Use the [Markdown Table Generator](http://www.tablesgenerator.com/markdown_tables) to add/remove values from the table_.
 
-| Name     | Function | IP Address | Operating System |
-|----------|----------|------------|------------------|
-| Jump Box | Gateway  | 10.0.0.1   | Linux            |
-| TODO     |          |            |                  |
-| TODO     |          |            |                  |
-| TODO     |          |            |                  |
+| Name     | Function                               | IP Address                                                                             | Operating System                               |
+|----------|----------------------------------------|----------------------------------------------------------------------------------------|------------------------------------------------|
+| Jump Box | Access Point to Virtual Networks       | Dynamic (Public) 10.0.0.4 (Private)                                                    | Linux 5.4.0-1039-azure x86_64 (Ubuntu 20.04.2) |
+| Web-1    | Web Traffic Machine 1                  | 52.136.123.97 (Public - Load Balancer & VM) 10.0.0.7 (Private)                         | Linux 5.4.0-1039-azure x86_64 (Ubuntu 20.04.2) |
+| Web-2    | Web Traffic Machine 2                  | 52.136.123.97 (Public - Load Balancer) 52.168.176.167 (Public - VM) 10.0.0.8 (Private) | Linux 5.4.0-1039-azure x86_64 (Ubuntu 20.04.2) |
+| Elk VM   | ELK Stack Machine to hold logs/metrics | 52.184.150.17 (Public) 10.1.0.4 (Private)                                              | Linux 5.4.0-1039-azure x86_64 (Ubuntu 20.04.2) |
 
 ### Access Policies
 
