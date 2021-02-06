@@ -87,13 +87,13 @@ Machines within the network can only be accessed by jumpbox.
 
 A summary of the access policies in place can be found in the table below.
 
- Name          |  Publicly Accessible  | Allowed IP Addresses |
-|---------------|:---------------------:|----------------------|
-| Jumpbox       | Yes, from specific IP | 71.235.45.209        |
-| Web-1         | No                    | 10.0.0.4             |
-| Web-2         | No                    | 10.0.0.4             |
-| ELK VM        | No                    | 10.0.0.4             |
-| Load Balancer | No                    | 10.0.0.4             |
+| Name          |  Publicly Accessible  | Allowed IP Addresses         |
+|---------------|:---------------------:|------------------------------|
+| Jumpbox       | Yes, from specific IP | 71.235.45.209                |
+| Web-1         | No                    | 10.0.0.4                     |
+| Web-2         | No                    | 10.0.0.4                     |
+| ELK VM        | No                    | 10.0.0.4, 71.235.45.209:5601 |
+| Load Balancer | No                    | 10.0.0.4, 71.235.45.209:80   |
 
 ### Elk Configuration
 
