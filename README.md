@@ -59,7 +59,7 @@ Load balancing ensures that the application will be highly redundant ensuring av
 
 Integrating an ELK server allows users to easily monitor the vulnerable VMs for changes to the data and system logs.
 
-- Filebeat generates logs and forwards them through a specified port to a single server allowing admin to review/visualize and index multiple machines in single location without the need to SSH into multiple machines.
+- Filebeat generates logs and forwards them through a specified port to a single server allowing admin to review/visualize and index multiple machines in single location without the need to SSH into multiple machines. Per the Filebeat Overview page: "When you start Filebeat, it starts one or more inputs that look in the locations you’ve specified for log data. For each log that Filebeat locates, Filebeat starts a harvester. Each harvester reads a single log for new content and sends the new log data to libbeat, which aggregates the events and sends the aggregated data to the output that you’ve configured for Filebeat." [Filebeat](https://www.elastic.co/guide/en/beats/filebeat/current/filebeat-overview.html#:~:text=Filebeat%20is%20a%20lightweight%20shipper,Elasticsearch%20or%20Logstash%20for%20indexing)
 
 - Metricbeat is a service deployed on VMs throughout your network to monitor metrics such as CPU usage, memory, file system, disk Input/Output (IO), and network IO. It also records statistics from services deployed on your network VMs including but not limited to Apache, MySQL, NGINX [Full List Here](https://www.elastic.co/guide/en/beats/metricbeat/current/metricbeat-modules.html)
 
