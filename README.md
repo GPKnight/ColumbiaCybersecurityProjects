@@ -104,6 +104,8 @@ Ansible was used to automate configuration of the ELK machine. No configuration 
 - It is a simple stable environment which allows sys admins to configure many machines at once, allowing for more efficient network management.
 - It is "push" based, versus "pull" based, which Ansible alternatives Chef and Puppet are.
 
+- [See Comparison of Chef/Puppet/Ansible](https://www.veritis.com/wp-content/uploads/2020/03/infographic-chef-vs-puppet-vs-ansible-what-are-the-differences.png)
+
 The playbook implements the following tasks:
 - _TODO: In 3-5 bullets, explain the steps of the ELK installation play. E.g., install Docker; download image; etc._
 - ...
