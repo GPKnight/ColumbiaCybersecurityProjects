@@ -107,9 +107,8 @@ Ansible was used to automate configuration of the ELK machine. No configuration 
 - [See Comparison of Chef/Puppet/Ansible](https://www.veritis.com/wp-content/uploads/2020/03/infographic-chef-vs-puppet-vs-ansible-what-are-the-differences.png)
 
 The playbook implements the following tasks:
-- _TODO: In 3-5 bullets, explain the steps of the ELK installation play. E.g., install Docker; download image; etc._
-- ...
-- ...
+
+- The first module within the [Install Elk](https://github.com/GPKnight/ColumbiaCybersecurityProjects/blob/main/install-elk.yml) playbook installs Docker engine. (Note that according to the [Docker Documentation](https://docs.docker.com/engine/install/debian/) docker.io is an outdated version of Docker)
 
 The following screenshot displays the result of running `docker ps` after successfully configuring the ELK instance.
 
