@@ -51,7 +51,7 @@ This document contains the following details:
 
 The main purpose of this network is to expose a load-balanced and monitored instance of DVWA, the D*mn Vulnerable Web Application.
 
-Load balancing ensures that the application will be highly redundant ensuring availability, in addition to restricting overloading within the network.
+Load balancing ensures that the application will be highly redundant ensuring availability, in addition to restricting any overload within the network.
 
 - A load balancer, with respect to the  CIA Triad, deals with availability. It allows distribution of incoming web traffic between hot servers, allowing for the alleviation of traffic stress on the server.  And, in the case of server failure, maintains the availability of information to remain unimpeded. A load balancer can also call for user authentication and can include other protections such as Web Application Firewall (WAF). A load balancer may also mitigate distributed denial-of-service (DDoS) attacks by dropping traffic indicative of such attacks before it reaches your web servers. [Load Balancer Source Info](https://lumecloud.com/what-does-a-load-balancer-do/)
 
