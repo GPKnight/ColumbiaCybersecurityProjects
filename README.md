@@ -4,35 +4,35 @@ Repository for Project Work completed during 2020/2021 class
 
 The files in this repository were used to configure the network depicted below.
 
-https://github.com/GPKnight/ColumbiaCyberSecurityProjects/blob/main/NetworkTopology.png
+https://github.com/GPKnight/ColumbiaCybersecurityProjects/blob/main/Diagrams/NetworkTopology.png
 
 These files have been tested and used to generate a live ELK deployment on Azure. They can be used to either recreate the entire deployment pictured above. Alternatively, individual playbooks may be used to install only certain pieces of the network structure, such as Filebeat and Metricbeat.
 
 ## Docker Setup
 
--Configure Docker on Jump Box VM: https://github.com/GPKnight/ColumbiaCybersecurityProjects/blob/main/DockerVMConfig.yml
+-Configure Docker on Jump Box VM: https://github.com/GPKnight/ColumbiaCybersecurityProjects/blob/main/Ansible/DockerVMConfig.yml
 
--Ansible config file (change line #106 to the appropriate username): https://github.com/GPKnight/ColumbiaCybersecurityProjects/blob/main/ansible.cfg
+-Ansible config file (change line #106 to the appropriate username): https://github.com/GPKnight/ColumbiaCybersecurityProjects/blob/main/Ansible/ansible.cfg
 
--Ansible hosts file (change the IPs / Group names i.e. Webservers / ELK, etc): https://github.com/GPKnight/ColumbiaCybersecurityProjects/blob/main/hosts
+-Ansible hosts file (change the IPs / Group names i.e. Webservers / ELK, etc): https://github.com/GPKnight/ColumbiaCybersecurityProjects/blob/main/Ansible/hosts
 
 ---------------------------------------------------------------------------------------------------------------------------------------------------------
 
 ## Installation of ELK Stack on ELK VM
 
--Installation of ELK stack on VM: https://github.com/GPKnight/ColumbiaCybersecurityProjects/blob/main/install-elk.yml
+-Installation of ELK stack on VM: https://github.com/GPKnight/ColumbiaCybersecurityProjects/blob/main/Ansible/install-elk.yml
 
 ---------------------------------------------------------------------------------------------------------------------------------------------------------
 
 ## Installation of Filebeat log service and Metricbeat metric service
 
--Installation of Filebeat service: https://github.com/GPKnight/ColumbiaCybersecurityProjects/blob/main/filebeat-playbook.%2Cyml
+-Installation of Filebeat service: https://github.com/GPKnight/ColumbiaCybersecurityProjects/blob/main/Ansible/filebeat-playbook.yml
 
--Filebeat config file (make changes to line 1105: elasticsearch IP/port, line 1805: kibana host IP/port): https://github.com/GPKnight/ColumbiaCybersecurityProjects/blob/main/filebeat-config.yml 
+-Filebeat config file (make changes to line 1105: elasticsearch IP/port, line 1805: kibana host IP/port): https://github.com/GPKnight/ColumbiaCybersecurityProjects/blob/main/Ansible/filebeat-config.yml 
 
--Installation of Metricbeat service: https://github.com/GPKnight/ColumbiaCybersecurityProjects/blob/main/metricbeat-playbook.yml
+-Installation of Metricbeat service: https://github.com/GPKnight/ColumbiaCybersecurityProjects/blob/main/Ansible/metricbeat-playbook.yml
 
--Metricbeat config file (change line 61: kibana host IP/port, line 95 host IP/port): https://github.com/GPKnight/ColumbiaCybersecurityProjects/blob/main/metricbeat-config.yml
+-Metricbeat config file (change line 61: kibana host IP/port, line 95 host IP/port): https://github.com/GPKnight/ColumbiaCybersecurityProjects/blob/main/Ansible/metricbeat-config.yml
   
   
   
@@ -108,11 +108,11 @@ Ansible was used to automate configuration of the ELK machine. No configuration 
 
 The playbook implements the following tasks:
 
-- The first module within the [Install Elk](https://github.com/GPKnight/ColumbiaCybersecurityProjects/blob/main/install-elk.yml) playbook installs Docker engine. (Note that according to the [Docker Documentation](https://docs.docker.com/engine/install/debian/) docker.io is an outdated version of Docker)
+- The first module within the [Install Elk](https://github.com/GPKnight/ColumbiaCybersecurityProjects/blob/main/Ansible/install-elk.yml) playbook installs Docker engine. (Note that according to the [Docker Documentation](https://docs.docker.com/engine/install/debian/) docker.io is an outdated version of Docker)
 
 The following screenshot displays the result of running `docker ps` after successfully configuring the ELK instance.
 
- [Docker ps screenshot](https://github.com/GPKnight/ColumbiaCybersecurityProjects/blob/main/dockerps.png)
+ [Docker ps screenshot](https://github.com/GPKnight/ColumbiaCybersecurityProjects/blob/main/Graphics/dockerps.png)
 
 ### Target Machines & Beats
 This ELK server is configured to monitor the following machines:
