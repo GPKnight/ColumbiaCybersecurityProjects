@@ -97,8 +97,12 @@ A summary of the access policies in place can be found in the table below.
 
 ### Elk Configuration
 
-Ansible was used to automate configuration of the ELK machine. No configuration was performed manually, which is advantageous because...
-- _TODO: What is the main advantage of automating configuration with Ansible?_
+Ansible was used to automate configuration of the ELK machine. No configuration was performed manually, which is advantageous because:
+
+- There is no agent required to run Ansible.  All you need to do to initiate it is ssh into a machine and install python.
+- The ease of use in getting Ansible to work makes the learning curve small.  The syntax of writiing modules within a playbook is not difficult to learn.
+- It is a simple stable environment which allows sys admins to configure many machines at once, allowing for more efficient network management.
+- It is "push" based, versus "pull" based, which Ansible alternatives Chef and Puppet are.
 
 The playbook implements the following tasks:
 - _TODO: In 3-5 bullets, explain the steps of the ELK installation play. E.g., install Docker; download image; etc._
