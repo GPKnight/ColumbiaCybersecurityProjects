@@ -130,7 +130,7 @@ We have installed the following Beats on these machines:
 - Filebeat and Metricbeat are installed on Web-1 and Web-2, 10.0.0.7 and 10.0.0.8, respectively.
 
 These Beats allow us to collect the following information from each machine:
-- _TODO: In 1-2 sentences, explain what kind of data each beat collects, and provide 1 example of what you expect to see. E.g., `Winlogbeat` collects Windows logs, which we use to track user logon events, etc._
+- Filebeat consists of two main components: inputs and harvesters. A harvester reads contents of a file, line by line, then sends content to an output. An input is responsible for managing the harvesters and finding all the sources for them to read. Filebeat stores the delivery state of each event it logs in the registry file, ensureing no data loss. [Filebeat Documentation Source](https://www.elastic.co/guide/en/beats/filebeat/current/how-filebeat-works.html)
 
 ### Using the Playbook
 In order to use the playbook, you will need to have an Ansible control node already configured. Assuming you have such a control node provisioned: 
