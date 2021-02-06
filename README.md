@@ -108,7 +108,15 @@ Ansible was used to automate configuration of the ELK machine. No configuration 
 
 The playbook implements the following tasks:
 
-- The first module within the [Install Elk](https://github.com/GPKnight/ColumbiaCybersecurityProjects/blob/main/Ansible/install-elk.yml) playbook installs Docker engine. (Note that according to the [Docker Documentation](https://docs.docker.com/engine/install/debian/) docker.io is an outdated version of Docker)
+- The first module within the [Install Elk](https://github.com/GPKnight/ColumbiaCybersecurityProjects/blob/main/Ansible/install-elk.yml) playbook pulls the Docker mod. (Note that according to the [Docker Documentation](https://docs.docker.com/engine/install/debian/) docker.io is an outdated version of Docker)
+
+- The second module in the playbook installs Python3, as Docker utilizes the scripting language.
+
+- The third module installs the Docker module allowing the engine to take docker-specific commands within the agent environment.
+
+- The third and fourth modules are redundant, one or the other may be hashed out. Both modules are methods of increasing the virtual memory to an amount suitable to run the elk container.
+
+- The fifth module downloads and installs the ELK stack container and specifies which ports to activate. In this case, 5601, 9200, 5044. All three ports are referenced in either the [Filebeat-config](https://github.com/GPKnight/ColumbiaCybersecurityProjects/blob/main/Ansible/filebeat-config.yml) or the [Metricbeat-config](https://github.com/GPKnight/ColumbiaCybersecurityProjects/blob/main/Ansible/metricbeat-config.yml) files.
 
 The following screenshot displays the result of running `docker ps` after successfully configuring the ELK instance.
 
