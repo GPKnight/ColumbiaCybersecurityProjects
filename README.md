@@ -52,9 +52,10 @@ This document contains the following details:
 The main purpose of this network is to expose a load-balanced and monitored instance of DVWA, the D*mn Vulnerable Web Application.
 
 Load balancing ensures that the application will be highly redundant ensuring availability, in addition to restricting overloading within the network.
-- The aspect of security which a load balancer impacts in the CIA Triad is availability. It allows distribution of incoming web traffic between hot servers, allowing for alleviated stress on the server itself.  And, in the case of server failure, maintains the availability of information to remain unimpeded.
 
-- The purpose of a Jump Box is to provide a secure and isolated server to allow sys admins to conduct administrative tasks over the network.
+- A load balancer, with respect to the  CIA Triad, deals with availability. It allows distribution of incoming web traffic between hot servers, allowing for the alleviation of traffic stress on the server.  And, in the case of server failure, maintains the availability of information to remain unimpeded. A load balancer can also call for user authentication and can include other protections such as Web Application Firewall (WAF). A load balancer may also mitigate distributed denial-of-service (DDoS) attacks by dropping traffic indicative of such attacks before it reaches your web servers. [Load Balancer Source Info](https://lumecloud.com/what-does-a-load-balancer-do/)
+
+- The purpose of a Jump Box is to provide a secure and isolated server to allow sys admins to conduct administrative tasks over the network. By using a Jump Box, it isolates the instances from direct outside connection. However, it also runs the risk of catastrophic failure because once a threat authenticates into the jump box/server there are fewer roadblocks between it and sensitive data. For instance, in the case of the 2015 Office of Personnel Management (OPM) attack, "By controling the jumpbox, the attackers had gained access to every nook and cranny of OPM's digital terrain." [Wired Postmortem](https://www.wired.com/2016/10/inside-cyberattack-shocked-us-government/)
 
 Integrating an ELK server allows users to easily monitor the vulnerable VMs for changes to the data and system logs.
 
