@@ -132,11 +132,21 @@ We have installed the following Beats on these machines:
 These Beats allow us to collect the following information from each machine:
 - Filebeat consists of two main components: inputs and harvesters. A harvester reads contents of a file, line by line, then sends content to an output. An input is responsible for managing the harvesters and finding all the sources for them to read. Filebeat stores the delivery state of each event it logs in the registry file, ensureing no data loss. [Filebeat Documentation Source](https://www.elastic.co/guide/en/beats/filebeat/current/how-filebeat-works.html)
 
+- Metricbeat is an Elastic beat that can be installed on servers to periodically collect metrics from the OS and services running on the server. Metricbeat can collect mretrics from the following services running on a server [Metricbeat Modules](https://www.elastic.co/guide/en/beats/metricbeat/current/metricbeat-modules.html). Metricbeat can insert any metrics into Elasticsearch, or send to Logstash, Redis, or Kafka. [Metricbeat Source Info](https://www.elastic.co/guide/en/beats/metricbeat/current/metricbeat-overview.html#:~:text=Metricbeat%20is%20a%20lightweight%20shipper,such%20as%20Elasticsearch%20or%20Logstash).
+
 ### Using the Playbook
 In order to use the playbook, you will need to have an Ansible control node already configured. Assuming you have such a control node provisioned: 
 
 SSH into the control node and follow the steps below:
-- Copy the _____ file to _____.
+- Copy the [Filebeat Playbook](https://github.com/GPKnight/ColumbiaCybersecurityProjects/blob/main/Ansible/filebeat-playbook.yml) and [Metricbeat Playbook](https://github.com/GPKnight/ColumbiaCybersecurityProjects/blob/main/Ansible/metricbeat-playbook.yml) file to /etc/ansible/roles
+
+- Copy the [Filebeat Config](https://github.com/GPKnight/ColumbiaCybersecurityProjects/blob/main/Ansible/filebeat-config.yml) and [Metricbeat Config](https://github.com/GPKnight/ColumbiaCybersecurityProjects/blob/main/Ansible/metricbeat-config.yml) yo /etc/ansible/files
+
+- Update the Filebeat Config file at line #1105 to include: "hosts: ["IPv4 of ELK Server:9200"]" and line #1805 to include: "host: "IPv4 of ELK Server:5601""
+
+- Update the Metricbeat Config file at line #61 to include: "hosts: "IPv4 of ELK Server:5601" and line #96 to include: "host: IPv4 of Elk Server:9200""
+
+- Verify that /ansible/[host](
 - Update the _____ file to include...
 - Run the playbook, and navigate to ____ to check that the installation worked as expected.
 
