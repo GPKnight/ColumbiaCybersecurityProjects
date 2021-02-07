@@ -141,6 +141,10 @@ SSH into the control node and follow the steps below:
 
 ### Setting up ELK Stack Server
 
+- Copy [Install ELK Playbook](https://github.com/GPKnight/ColumbiaCybersecurityProjects/blob/main/Ansible/install-elk.yml) to /etc/ansible/roles
+
+- Verify that the /etc/ansible/hosts file has a group [elk]
+10.1.0.4 ansible_python_interpreter=/usr/bin/python3
 
 
 ### Setting up Filebeat and Metricbeat services on your Webservers
