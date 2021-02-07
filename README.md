@@ -138,6 +138,9 @@ These Beats allow us to collect the following information from each machine:
 In order to use the playbook, you will need to have an Ansible control node already configured. Assuming you have such a control node provisioned: 
 
 SSH into the control node and follow the steps below:
+
+### Setting up ELK Stack Server
+
 - Copy the [Filebeat Playbook](https://github.com/GPKnight/ColumbiaCybersecurityProjects/blob/main/Ansible/filebeat-playbook.yml) and [Metricbeat Playbook](https://github.com/GPKnight/ColumbiaCybersecurityProjects/blob/main/Ansible/metricbeat-playbook.yml) file to /etc/ansible/roles
 
 - Copy the [Filebeat Config](https://github.com/GPKnight/ColumbiaCybersecurityProjects/blob/main/Ansible/filebeat-config.yml) and [Metricbeat Config](https://github.com/GPKnight/ColumbiaCybersecurityProjects/blob/main/Ansible/metricbeat-config.yml) yo /etc/ansible/files
@@ -146,9 +149,11 @@ SSH into the control node and follow the steps below:
 
 - Update the Metricbeat Config file at line #61 to include: "hosts: "IPv4 of ELK Server:5601" and line #96 to include: "host: IPv4 of Elk Server:9200""
 
-- Verify that /ansible/[host](
-- Update the _____ file to include...
-- Run the playbook, and navigate to ____ to check that the installation worked as expected.
+- Verify that /ansible/[host](https://github.com/GPKnight/ColumbiaCybersecurityProjects/blob/main/Ansible/hosts) has the IPv4 addresses of the webservers in it (in this example, the group is identified as [webservers] 10.0.0.7 10.0.0.8
+
+- Run the playbook by entering ansible-playbook "PlaybookName.yml"
+
+- To veryify that the Beat services were installed and running, you can confirm it two ways. The first, to verify the service was installed and running on the webserver. The second verification will confirm that the ports specified within the playbook are correct and pipe logs and metrics to the web, visualized by Kibana through the ELK Stack server.
 
 _TODO: Answer the following questions to fill in the blanks:_
 - _Which file is the playbook? Where do you copy it?_
