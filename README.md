@@ -141,6 +141,10 @@ SSH into the control node and follow the steps below:
 
 ### Setting up ELK Stack Server
 
+
+
+### Setting up Filebeat and Metricbeat services on your Webservers
+
 - Copy the [Filebeat Playbook](https://github.com/GPKnight/ColumbiaCybersecurityProjects/blob/main/Ansible/filebeat-playbook.yml) and [Metricbeat Playbook](https://github.com/GPKnight/ColumbiaCybersecurityProjects/blob/main/Ansible/metricbeat-playbook.yml) file to /etc/ansible/roles
 
 - Copy the [Filebeat Config](https://github.com/GPKnight/ColumbiaCybersecurityProjects/blob/main/Ansible/filebeat-config.yml) and [Metricbeat Config](https://github.com/GPKnight/ColumbiaCybersecurityProjects/blob/main/Ansible/metricbeat-config.yml) yo /etc/ansible/files
@@ -153,11 +157,10 @@ SSH into the control node and follow the steps below:
 
 - Run the playbook by entering ansible-playbook "PlaybookName.yml"
 
-- To veryify that the Beat services were installed and running, you can confirm it two ways. The first, to verify the service was installed and running on the webserver. The second verification will confirm that the ports specified within the playbook are correct and pipe logs and metrics to the web, visualized by Kibana through the ELK Stack server.
-
-_TODO: Answer the following questions to fill in the blanks:_
-- _Which file is the playbook? Where do you copy it?_
-- _Which file do you update to make Ansible run the playbook on a specific machine? How do I specify which machine to install the ELK server on versus which to install Filebeat on?_
-- _Which URL do you navigate to in order to check that the ELK server is running?
+- To verify that the Beat services were installed and running, you can confirm it two ways. The first, to verify the service was installed and running on the webserver. The second verification will confirm that the ports specified within the playbook are correct and pipe logs and metrics to the web, visualized by Kibana through the ELK Stack server.
+  - Verify 1: ssh username@webserver1/2 , enter the following on the Command Line Interface (CLI): "systemctl status filebeat" ; "systemctl status metricbeat" you should see that both servicess are running.
+  - Verify 2: On your host machine, go to "ELK VM IPv4:5601/app/kibana", click on Logs and you should see something similar to [this](https://github.com/GPKnight/ColumbiaCybersecurityProjects/blob/main/Graphics/FilebeatLog.png) go back to the main Kibana page, click Metrics and you should see something similar to [this](https://github.com/GPKnight/ColumbiaCybersecurityProjects/blob/main/Graphics/metricbeatlog.png)
+  
+  - If bother Verify 1 and Verify 2 are confirmed, your Filebeat and Metricbeat installs were succesful, and the return of logs and metrics are succesful.
 
 _As a **Bonus**, provide the specific commands the user will need to run to download the playbook, update the files, etc._
