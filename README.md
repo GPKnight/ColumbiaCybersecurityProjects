@@ -144,9 +144,15 @@ SSH into the control node and follow the steps below:
 - Copy [Install ELK Playbook](https://github.com/GPKnight/ColumbiaCybersecurityProjects/blob/main/Ansible/install-elk.yml) to /etc/ansible/roles
 
 - Verify that the /etc/ansible/hosts file has a group [elk]
-10.1.0.4 ansible_python_interpreter=/usr/bin/python3
+[Private IP of ELK Server] ansible_python_interpreter=/usr/bin/python3
 
+- Run the "Install Elk.yml" playbook.
 
+- Once the playbook has run successfully, verify the ELK server has been configured and is functioning correctly via two methods:
+
+  - From the jumpbox, enter your docker container.  From that container, ssh into the ELK VM.
+  
+  - 
 ### Setting up Filebeat and Metricbeat services on your Webservers
 
 - Copy the [Filebeat Playbook](https://github.com/GPKnight/ColumbiaCybersecurityProjects/blob/main/Ansible/filebeat-playbook.yml) and [Metricbeat Playbook](https://github.com/GPKnight/ColumbiaCybersecurityProjects/blob/main/Ansible/metricbeat-playbook.yml) file to /etc/ansible/roles
