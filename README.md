@@ -174,4 +174,8 @@ SSH into the control node and follow the steps below:
   
   - If both Verify 1 and Verify 2 are confirmed, your Filebeat and Metricbeat installs were succesful, and the return of logs and metrics are succesful.
 
-_As a **Bonus**, provide the specific commands the user will need to run to download the playbook, update the files, etc._
+As a **Bonus**, provide the specific commands the user will need to run to download the playbook, update the files, etc. 
+
+Once your virtual network has been set up with the appropriate configuration, ssh into the jumpbox and start and attach your container.  Once in the container navigate to /etc/ansible folder and use the wget command to pull the playbook, host, and config files using the link addresses to this repository:
+
+
