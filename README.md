@@ -150,9 +150,10 @@ SSH into the control node and follow the steps below:
 
 - Once the playbook has run successfully, verify the ELK server has been configured and is functioning correctly via two methods:
 
-  - From the jumpbox, enter your docker container.  From that container, ssh into the ELK VM.
+  - From the jumpbox, enter your docker container.  From that container, ssh into the ELK VM and run "sudo docker ps". The resulting output should be something similar to [This](https://github.com/GPKnight/ColumbiaCybersecurityProjects/blob/main/Graphics/Elk.png)
   
-  - 
+  - This would also be a good time to double-check the docker.service is running with the correctly specified ports. To do this, run "systemctl status docker.service" and you should see an output similar to [This](https://github.com/GPKnight/ColumbiaCybersecurityProjects/blob/main/Graphics/dockerservice.png)
+  
 ### Setting up Filebeat and Metricbeat services on your Webservers
 
 - Copy the [Filebeat Playbook](https://github.com/GPKnight/ColumbiaCybersecurityProjects/blob/main/Ansible/filebeat-playbook.yml) and [Metricbeat Playbook](https://github.com/GPKnight/ColumbiaCybersecurityProjects/blob/main/Ansible/metricbeat-playbook.yml) file to /etc/ansible/roles
