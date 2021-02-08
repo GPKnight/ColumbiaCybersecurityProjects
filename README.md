@@ -8,9 +8,24 @@ https://github.com/GPKnight/ColumbiaCybersecurityProjects/blob/main/Diagrams/Net
 
 These files have been tested and used to generate a live ELK deployment on Azure. They can be used to either recreate the entire deployment pictured above. Alternatively, individual playbooks may be used to install only certain pieces of the network structure, such as Filebeat and Metricbeat.
 
-## Docker Setup
+## Pulling a Docker container onto Jumpbox
 
--Configure Docker on Jump Box VM: https://github.com/GPKnight/ColumbiaCybersecurityProjects/blob/main/Ansible/DockerVMConfig.yml
+- Once your virtual network has been setup to include a jumpbox and webservers, it is time to configure the jumpbox before we can proceed with any further steps.
+
+- SSH into the jumpbox using the username and ip configured during setup in the Microsoft Azure account (for these files all usernames were kept as azureuser)
+
+- Once in the jumpbox, run "apt update" then "sudo apt install docker.io"
+
+- Once Docker is installed on the jumpbox, it must be initiated, "sudo systemctl start docker"
+
+- Following the initializing of Docker, you will want to pull the specific Ansible container by running "sudo docker pull cyberxsecurity/ansible"
+
+- To then start the Ansible container, run "sudo docker run -ti cyberxsecurity/ansible:latest bash". This command will only need to be run once. After the container is created, you will run "sudo docker container start [Container Name Here] and "sudo docker container attach [Container Name Here] for every subsequent login.
+
+
+## Docker Webserver VM Setup
+
+-Configure Docker and install DVWA containers on web VMs: https://github.com/GPKnight/ColumbiaCybersecurityProjects/blob/main/Ansible/DockerVMConfig.yml
 
 -Ansible config file (change line #106 to the appropriate username): https://github.com/GPKnight/ColumbiaCybersecurityProjects/blob/main/Ansible/ansible.cfg
 
@@ -80,7 +95,7 @@ _Note: Use the [Markdown Table Generator](http://www.tablesgenerator.com/markdow
 The machines on the internal network are not exposed to the public Internet. 
 
 Only the jumpbox machine can accept connections from the Internet. Access to this machine is only allowed from the following IP addresses:
-- 71.235.45.209 (Personal Laptop)
+- 71.235.45.209 (Host Laptop)
 
 Machines within the network can only be accessed by jumpbox.
 - Jumpbox, private IP of 10.0.0.4
@@ -177,5 +192,13 @@ SSH into the control node and follow the steps below:
 As a **Bonus**, provide the specific commands the user will need to run to download the playbook, update the files, etc. 
 
 Once your virtual network has been set up with the appropriate configuration, ssh into the jumpbox and start and attach your container.  Once in the container navigate to /etc/ansible folder and use the wget command to pull the playbook, host, and config files using the link addresses to this repository:
+
+wget https://github.com/GPKnight/ColumbiaCybersecurityProjects/blob/main/Ansible/DockerVMConfig.yml
+
+wget https://github.com/GPKnight/ColumbiaCybersecurityProjects/blob/main/Ansible/ansible.cfg 
+  ##Change line #106 to applicable username##
+  
+wget 
+- Move the filebeat and metricbeat playbook files into /etc/ansible/roles and move the filebeat and metricbeat config files into /etc/ansible/files
 
 
