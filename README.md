@@ -23,7 +23,7 @@ These files have been tested and used to generate a live ELK deployment on Azure
 - To then start the Ansible container, run "sudo docker run -ti cyberxsecurity/ansible:latest bash". This command will only need to be run once. After the container is created, you will run "sudo docker container start [Container Name Here] and "sudo docker container attach [Container Name Here] for every subsequent login.
 
 
-## Docker Webserver VM Setup
+## Docker  DVWA Container on Webserver VM Setup
 
 -Configure Docker and install DVWA containers on web VMs: https://github.com/GPKnight/ColumbiaCybersecurityProjects/blob/main/Ansible/DockerVMConfig.yml
 
@@ -184,12 +184,14 @@ SSH into the control node and follow the steps below:
 - Run the playbook by entering ansible-playbook "PlaybookName.yml"
 
 - To verify that the Beat services were installed and running, you can confirm it two ways. The first, to verify the service was installed and running on the webserver. The second verification will confirm that the ports specified within the playbook are correct and pipe logs and metrics to the web, visualized by Kibana through the ELK Stack server.
+
   - Verify 1: ssh username@webserver1/2IPv4 , enter the following on the Command Line Interface (CLI): "systemctl status filebeat" ; "systemctl status metricbeat" you should see  that both servicess are running.
+  
   - Verify 2: On your host machine, go to "ELK VM IPv4:5601/app/kibana", click on Logs and you should see something similar to [this](https://github.com/GPKnight/ColumbiaCybersecurityProjects/blob/main/Graphics/FilebeatLog.png) go back to the main Kibana page, click Metrics and you should see something similar to [this](https://github.com/GPKnight/ColumbiaCybersecurityProjects/blob/main/Graphics/metricbeatlog.png)
   
   - If both Verify 1 and Verify 2 are confirmed, your Filebeat and Metricbeat installs were succesful, and the return of logs and metrics are succesful.
 
-As a **Bonus**, provide the specific commands the user will need to run to download the playbook, update the files, etc. 
+### As a **Bonus**, provide the specific commands the user will need to run to download the playbook, update the files, etc. 
 
 Once your virtual network has been set up with the appropriate configuration, ssh into the jumpbox and start and attach your container.  Once in the container navigate to /etc/ansible folder and use the wget command to pull the playbook, host, and config files using the link addresses to this repository:
 
@@ -198,7 +200,32 @@ wget https://github.com/GPKnight/ColumbiaCybersecurityProjects/blob/main/Ansible
 wget https://github.com/GPKnight/ColumbiaCybersecurityProjects/blob/main/Ansible/ansible.cfg 
   ##Change line #106 to applicable username##
   
-wget 
+wget https://github.com/GPKnight/ColumbiaCybersecurityProjects/blob/main/Ansible/hosts
+  ##Change the IPs / Group Names i.e. Webservers, Elk, etc##
+  
+wget https://github.com/GPKnight/ColumbiaCybersecurityProjects/blob/main/Ansible/install-elk.yml
+  ##Make sure the hosts: refers to the correct IPv4 address/IP group name in the Hosts file
+  
+wget https://github.com/GPKnight/ColumbiaCybersecurityProjects/blob/main/Ansible/filebeat-playbook.yml
+  ##Make sure the hosts: option in the header indicates the correct webserver IP group/IPv4 addresses
+
+wget https://github.com/GPKnight/ColumbiaCybersecurityProjects/blob/main/Ansible/filebeat-config.yml
+  ##Make sure that line # 1105 has the correct private IPv4 and port for the ELK VM and line # 1805 the host: has the ELK IPv4 and port are specified
+
+wget https://github.com/GPKnight/ColumbiaCybersecurityProjects/blob/main/Ansible/metricbeat-playbook.yml
+  ##Make sure the hosts: line in the header has the webserver group name/IPv4 addresses listed
+
+wget https://github.com/GPKnight/ColumbiaCybersecurityProjects/blob/main/Ansible/metricbeat-config.yml
+  ##Make sure line # 61 has the ELK IP/port specififed and line # 95 has the ELK IP/port specified
+  
+## When the edits indicated above are made, proceed to the following:
+
+- From the /etc/ansible run the [Install ELK](https://github.com/GPKnight/ColumbiaCybersecurityProjects/blob/main/Ansible/install-elk.yml) Playbook by running "ansible-playbook [Install Elk Playbook Name]
+ 
 - Move the filebeat and metricbeat playbook files into /etc/ansible/roles and move the filebeat and metricbeat config files into /etc/ansible/files
 
+- Move into the /etc/ansible/roles folder and run "ansible-playbook [filebeat playbook name]" and "ansible-playbook [metricbeat playbook name]"
 
+- Your virtual network is now equipped to monitor logs and metrics! 
+
+#### [CONGRATS](https://github.com/GPKnight/ColumbiaCybersecurityProjects/blob/main/Graphics/hello-world.jpg)
