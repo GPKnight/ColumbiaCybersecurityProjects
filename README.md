@@ -228,4 +228,4 @@ wget https://github.com/GPKnight/ColumbiaCybersecurityProjects/blob/main/Ansible
 
 - Your virtual network is now equipped to monitor logs and metrics! 
 
-#### [CONGRATS](https://github.com/GPKnight/ColumbiaCybersecurityProjects/blob/main/Graphics/hello-world.jpg)
+#### ![CONGRATS](https://github.com/GPKnight/ColumbiaCybersecurityProjects/blob/main/Graphics/hello-world.jpg)
