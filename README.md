@@ -1,4 +1,4 @@
-# ColumbiaCybersecurityProjects
+# Columbia Cybersecurity Projects
 Repository for Project Work completed during 2020/2021 class
 ## Automated ELK Stack Deployment
 
