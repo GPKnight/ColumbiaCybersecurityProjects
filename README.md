@@ -4,7 +4,7 @@ Repository for Project Work completed during 2020/2021 class
 
 The files in this repository were used to configure the network depicted below.
 
-! [Network Diagram] (https://github.com/GPKnight/ColumbiaCybersecurityProjects/blob/main/Diagrams/NetworkTopology.png)
+![Network Diagram](https://github.com/GPKnight/ColumbiaCybersecurityProjects/blob/main/Diagrams/NetworkTopology.png)
 
 These files have been tested and used to generate a live ELK deployment on Azure. They can be used to either recreate the entire deployment pictured above. Alternatively, individual playbooks may be used to install only certain pieces of the network structure, such as Filebeat and Metricbeat.
 
