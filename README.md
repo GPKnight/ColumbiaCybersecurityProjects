@@ -173,7 +173,7 @@ SSH into the control node and follow the steps below:
 
 - Copy the [Filebeat Playbook](https://github.com/GPKnight/ColumbiaCybersecurityProjects/blob/main/Ansible/filebeat-playbook.yml) and [Metricbeat Playbook](https://github.com/GPKnight/ColumbiaCybersecurityProjects/blob/main/Ansible/metricbeat-playbook.yml) file to /etc/ansible/roles
 
-- Copy the [Filebeat Config](https://github.com/GPKnight/ColumbiaCybersecurityProjects/blob/main/Ansible/filebeat-config.yml) and [Metricbeat Config](https://github.com/GPKnight/ColumbiaCybersecurityProjects/blob/main/Ansible/metricbeat-config.yml) yo /etc/ansible/files
+- Copy the [Filebeat Config](https://github.com/GPKnight/ColumbiaCybersecurityProjects/blob/main/Ansible/filebeat-config.yml) and [Metricbeat Config](https://github.com/GPKnight/ColumbiaCybersecurityProjects/blob/main/Ansible/metricbeat-config.yml) to /etc/ansible/files
 
 - Update the Filebeat Config file at line #1105 to include: "hosts: ["IPv4 of ELK Server:9200"]" and line #1805 to include: "host: "IPv4 of ELK Server:5601""
 
